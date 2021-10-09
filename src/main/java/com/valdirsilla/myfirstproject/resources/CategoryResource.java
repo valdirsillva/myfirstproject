@@ -31,11 +31,8 @@ public class CategoryResource {
 	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Category> findById(@PathVariable Long id) {
-		/**
-		 * Annotation @pathVariable reconhece o id passado por parâmetro
-		 */
 		
-		Category cat = categoryRepository.findById(id);
+		Category cat = categoryRepository.findById(id).get();
 		
 		return ResponseEntity.ok().body(cat);
 	}

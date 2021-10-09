@@ -35,7 +35,7 @@ public class ProductResource {
 		 * Annotation @pathVariable reconhece o id passado por parâmetro
 		 */
 		
-		Product cat = categoryRepository.findById(id);
+		Product cat = categoryRepository.findById(id).get();
 		
 		return ResponseEntity.ok().body(cat);
 	}
